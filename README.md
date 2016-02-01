@@ -37,3 +37,4 @@ DELETE a user record based on the ID given.
 # Todo
 
 - Add more tests and status codes.
+- Add requirement of authentication
