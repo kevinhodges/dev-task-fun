@@ -36,4 +36,4 @@ DELETE a user record based on the ID given.
 
 # Todo
 
- - Implement data validation. I.e email addresses must have @ followed by .com / .uk etc.
+- Add more tests and status codes.
