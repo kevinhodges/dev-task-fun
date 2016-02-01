@@ -61,9 +61,9 @@ app.use(function(err, req, res, next) {
 
 mongoose.connect('mongodb://localhost/userApi', function(err) {
     if(err) {
-        console.log('connection error', err);
+        console.log('Connection to mongodb failed!', err);
     } else {
-        console.log('connection successful');
+        console.log('Connection to mongodb successful!');
     }
 });
 
