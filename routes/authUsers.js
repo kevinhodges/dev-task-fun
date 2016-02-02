@@ -6,7 +6,7 @@ var authUser = require('../models/authUser.js');
 var jwt    = require('jsonwebtoken');
 
 
-/* POST /setup - Post to create your sample user */
+/* POST /setup - Post to create your sample user */ // I might get this reading from a config file of allowed users or something.
 router.get('/setup', function(req, res, next) {
   var adminUser = {
     name: 'admin',
@@ -15,7 +15,8 @@ router.get('/setup', function(req, res, next) {
   };
   authUser.create(adminUser, function (err, post) {
     if (err) return next(err);
-    res.json(post);
+    // Make sure we tell the admin who is setting the API up that the user table is now set up.
+    res.json({ success: true, message: 'User database set up, API keys can now be requested!' });
   });
 });
 

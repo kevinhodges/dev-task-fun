@@ -5,7 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-
 var routes = require('./routes/index');
 var authUsers = require('./routes/authUsers');
 var tokenChecker = require('./middleware/tokenChecker');
@@ -26,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/authUsers', authUsers);
+/* This is important, we are making sure tokens are checked when anyone wants to interact with our user api */
 app.use('/users', tokenChecker);
 app.use('/users', users);
 
