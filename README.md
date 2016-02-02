@@ -10,7 +10,7 @@ To use **dev-task-fun** clone down the repo using `git clone` and then run an `n
 # Usage
 Once you have everything up to date and installed, you will need to first create a mongodb instance by running `mongod` in your terminal. Next ensure you are in the project folder in a second terminal window and run the command `npm start`, if everything goes well you will be met with a success message *'Connection to mongodb successful!'*.
 
-Initially, you will need to create an `authUser` in order to gain an example access token so that you can hit the `/users/` endpoint. Do do this, visit `/authUsers/setup`. This will automatically create a user account that you can test the API authentication with. The username is `admin` and the password is `admin_pass`. 
+Initially, you will need to create an `authUser` in order to gain an example access token so that you can hit the `/users/` endpoint. Do do this, visit `/authUsers/setup`. This will automatically create a user account that you can test the API authentication with. `name: "admin"` `password: "admin_pass"`
 
 Once you have done this, you will need to simulate obtaining an API key, to do this, send a `POST` request to the endpoint `/authUsers/authenticate`. If you have input your information correctly, you will be returned your API key, store this somewhere safe!
 
