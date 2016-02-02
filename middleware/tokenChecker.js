@@ -12,10 +12,9 @@ module.exports = function(req, res, next) {
 		// verifies secret and checks exp
 		jwt.verify(token, config.secret, function(err, decoded) {			
 			if (err) {
-				console.log(err);
 				return res.json({ success: false, message: 'Failed to authenticate token.' });		
 			} else {
-				// if everything is good, save to request for use in other routes
+				// If all good, then we make sure we allow access for the other routes and beyond.
 				req.decoded = decoded;	
 				next();
 			}

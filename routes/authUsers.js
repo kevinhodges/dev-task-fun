@@ -7,8 +7,13 @@ var jwt    = require('jsonwebtoken');
 
 
 /* POST /setup - Post to create your sample user */
-router.post('/setup', function(req, res, next) {
-  authUser.create(req.body, function (err, post) {
+router.get('/setup', function(req, res, next) {
+  var adminUser = {
+    name: 'admin',
+    password: 'admin_pass',
+    admin: true
+  };
+  authUser.create(adminUser, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
